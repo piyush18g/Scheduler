@@ -1,0 +1,12 @@
+<%- include("index.html")  %>
+<form action="/submit" method="POST">
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" required />
+    <label for="desc">Description:</label>
+    <input type="text" name="desc" id="desc" required />
+    <label for="d_date">Due:</label>
+    <input type="datetime" name="d_date" id="d_date" required />
+    <input type="submit" value="Add">
+  </form>
+</body>
+</html>

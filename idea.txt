@@ -1,0 +1,26 @@
+Schedukler
+
+schedule
+    date time
+    type
+        daily
+        weekly
+        monthly
+        yearly
+        custom
+    title
+    desc
+    due date(y/n)
+
+main page
+    list of schedules
+    new schedule 
+    view by
+        priority
+        duedate
+        add date
+
+function 
+    add new
+    delete any
+    
