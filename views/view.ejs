@@ -1,0 +1,15 @@
+<%- include("header.ejs") %>
+
+<% for(let j=i;j<file_res.length;j++){%>
+    <div style="background-color:aqua;">
+        <h4><%= file_res[i].title %></h4>
+        <h5><%= file_res[i].desc %></h5>
+    </div>
+    <br>
+  <%} %>
+  <% if (i<file_res.length) {i+=2;} %>
+  <% if ((i<file_res.length)) {%>
+    <button>Next</button>
+    <% } %>
+<button onclick="/index" method="get">Add schedule</button>
+<%- include("footer.ejs") %>
