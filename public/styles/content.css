@@ -12,6 +12,7 @@ body {
 header,
 footer {
   flex: 0 0 auto;
+  align-self: center;
 }
 
 main {
@@ -20,64 +21,53 @@ main {
   flex: 1 0 auto;
 }
 
-h1 {
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  
+}
+
+.schedule-box {
+  width: 270px;
+  min-height: 220px;
+}
+
+.add-scd {
+  min-width: 600px;
+}
+
+.window-body{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.pagination {
   text-align: center;
+  margin-top: 20px;
+  gap: 10px;
 }
 
-p {
-  color: grey;
+.ult_win {
+  background-color: #ece9d8;
+  background-image: url("bg.jpg");
+  background-size: cover; 
+  background-attachment: fixed;
 }
 
-.profile {
-  height: 200px;
-  width: 200px;
-  object-fit: cover;
-  border-radius: 50%;
-}
-form {
-  margin-top: 50px;
+.ult_win.hide{
+  background-image: none;
 }
 
-.feedback-input {
-  color: white;
-  font-weight: 500;
-  font-size: 18px;
-  border-radius: 5px;
-  line-height: 22px;
-  background-color: transparent;
-  border: 2px solid #3586ff;
-  transition: all 0.3s;
-  padding: 13px;
-  margin-bottom: 15px;
-  width: 100%;
-  box-sizing: border-box;
-  outline: 0;
+.down-centre{
+  align-items: baseline;
 }
 
-.feedback-input:focus {
-  border: 2px solid #3586ff;
+.p-side{
+  text-align: left;
 }
 
-textarea {
-  height: 150px;
-  line-height: 150%;
-  resize: vertical;
-}
-
-[type="submit"] {
-  width: 100%;
-  background: #3586ff;
-  border-radius: 5px;
-  border: 0;
-  cursor: pointer;
-  color: white;
-  font-size: 24px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  transition: all 0.3s;
-  margin-top: -4px;
-  font-weight: 700;
-}
-[type="submit"]:hover {
-  background: #3586ff;
+.p-down{
+  justify-self: flex-end;
 }

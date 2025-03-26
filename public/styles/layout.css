@@ -282,3 +282,29 @@ footer .wave#wave4 {
     background-position-x: 1000px;
   }
 }
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.schedule-box {
+  width: 280px;
+  padding: 10px;
+}
+
+.window-body {
+  padding: 10px;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.action-buttons {
+  text-align: center;
+  margin-top: 10px;
+}

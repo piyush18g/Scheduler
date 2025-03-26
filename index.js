@@ -15,37 +15,28 @@ app.get("/", (req, res) => {
 app.post("/submit", (req, res) => {
   //console.log(req.body);
   //console.log(req.rawHeaders);
-  const date_r=Date.now();
+  const date_r = Date.now();
   //console.log(Date(date_r));
-  var data=req.body;
-  data.c_date=date_r;
+  var data = req.body;
+  data.c_date = date_r;
   console.log(data);
-  var file=fs.readFileSync("todo.json",'utf-8');
-  var data_file=JSON.parse(file);
+  var file = fs.readFileSync("todo.json", 'utf-8');
+  var data_file = JSON.parse(file);
   console.log(data_file);
   data_file.push(data);
-  fs.writeFile(
-    "todo.json",
-    JSON.stringify(data_file),
-    err => {
-        // Checking for errors 
-        if (err) throw err;
+  fs.writeFileSync("todo.json", JSON.stringify(data_file, null, 2));
+  console.log("Done writing");
 
-        // Success 
-        console.log("Done writing");
-    }); 
-  res.render("index.ejs" )
+  res.render("index.ejs")
 });
 
 app.get("/view", (req, res) => {
-  var file_res=JSON.parse(fs.readFileSync("todo.json",'utf-8'));
-  var i=0;
-  console.log(req.rawHeaders);
-  res.render("view.ejs",{file_res,i});
+  var file_res = JSON.parse(fs.readFileSync("todo.json", 'utf-8'));
+  let i = parseInt(req.query.i) || 0;
+  let l=file_res.length;
+  res.render("view.ejs", { file_res, i ,l});
 });
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
-
-

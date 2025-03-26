@@ -1,15 +1,40 @@
 <%- include("header.ejs") %>
-
-<% for(let j=i;j<file_res.length;j++){%>
-    <div style="background-color:aqua;">
-        <h4><%= file_res[i].title %></h4>
-        <h5><%= file_res[i].desc %></h5>
-    </div>
-    <br>
-  <%} %>
-  <% if (i<file_res.length) {i+=2;} %>
-  <% if ((i<file_res.length)) {%>
-    <button>Next</button>
+</div>
+</div>
+<div class="container">
+    <% for (let j = i; j < Math.min(i + 9, file_res.length); j++) { %>
+        <div class="window schedule-box">
+            <div class="title-bar">
+                <div class="title-bar-text"><%= file_res[l-j-1].title %></div>
+            </div>
+            <div class="window-body">
+                <p><strong>Created:</strong> <%= new Date(file_res[l-1-j].c_date).toLocaleString() %></p>
+                <p><%= file_res[l-1-j].desc %></p> 
+            </div>
+        </div>
     <% } %>
-<button onclick="/index" method="get">Add schedule</button>
+</div>
+
+<!-- Pagination Controls -->
+<div class="pagination">
+    <% if (i - 9 >= 0) { %>
+        <a href="/view?i=<%= i - 9 %>">
+            <button type="button">Previous</button>
+        </a>
+    <% } %>
+
+    <% if (i + 9 < file_res.length) { %>
+        <a href="/view?i=<%= i + 9 %>">
+            <button type="button">Next</button>
+        </a>
+    <% } %>
+
+    <div class="action-buttons">
+      <a href="/">
+          <button type="button">Add Schedule</button>
+      </a>
+  </div>
+
+</div>
+
 <%- include("footer.ejs") %>
